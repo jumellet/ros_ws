@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="arm_light9">
+  
+  <link name="world" /> 
+  <joint name="world_to_base_link" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.85" rpy="0 0 0"/>
+  </joint>
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="8.94290462428726E-05 2.78483347493363E-10 -0.208778551951711"
+        rpy="0 0 0" />
+      <mass
+        value="0.449330133854053" />
+      <inertia
+        ixx="0.0539092238947072"
+        ixy="-1.7562186006245E-12"
+        ixz="-8.29193804528805E-06"
+        iyy="0.0539103657676842"
+        iyz="-1.71571228617907E-11"
+        izz="0.0602540208531343" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_up">
+    <inertial>
+      <origin
+        xyz="-7.30702054418941E-10 6.31382612858999E-10 0.0137182340788042"
+        rpy="0 0 0" />
+      <mass
+        value="0.00271384463303043" />
+      <inertia
+        ixx="2.55706917709004E-07"
+        ixy="3.66626721136024E-14"
+        ixz="-1.21345198507066E-14"
+        iyy="7.65929454031126E-07"
+        iyz="1.75042183249186E-14"
+        izz="5.4854582703903E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/link_up.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/link_up.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.015457"
+      rpy="-3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_up" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="6"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+  <link
+    name="crossbar1">
+    <inertial>
+      <origin
+        xyz="-2.9141502433383E-08 -1.35715272353565E-10 -3.10173056128349E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00146868153142243" />
+      <inertia
+        ixx="9.37700107469679E-08"
+        ixy="-2.04043583279686E-14"
+        ixz="2.11690645332782E-16"
+        iyy="1.82956722375402E-07"
+        iyz="4.16688239815433E-15"
+        izz="9.37699903359982E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/crossbar1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/crossbar1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0295"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link_up" />
+    <child
+      link="crossbar1" />
+    <axis
+      xyz="1 0 0" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+  <link
+    name="link_middle">
+    <inertial>
+      <origin
+        xyz="1.53740309372097E-08 2.43111719644418E-08 0.175502855957032"
+        rpy="0 0 0" />
+      <mass
+        value="0.0113939749912111" />
+      <inertia
+        ixx="0.000184717795085116"
+        ixy="-2.12361111057736E-12"
+        ixz="-8.31018622091395E-12"
+        iyy="0.000185738466505756"
+        iyz="1.42198467361369E-11"
+        izz="1.11626506835403E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/link_middle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/link_middle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="crossbar1" />
+    <child
+      link="link_middle" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="crossbar2">
+    <inertial>
+      <origin
+        xyz="-2.91415096498326E-08 -1.35718020155551E-10 -3.1017304169545E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00146868153142241" />
+      <inertia
+        ixx="9.37700107469651E-08"
+        ixy="-2.04043577480892E-14"
+        ixz="2.11690703891051E-16"
+        iyy="1.829567223754E-07"
+        iyz="4.1668823669535E-15"
+        izz="9.3769990335999E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/crossbar2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/crossbar2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="continuous">
+    <origin
+      xyz="0 0 0.351"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="link_middle" />
+    <child
+      link="crossbar2" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+  <link
+    name="end_effector">
+    <inertial>
+      <origin
+        xyz="4.75393613363906E-10 -3.04907765702467E-10 -0.0405659213973987"
+        rpy="0 0 0" />
+      <mass
+        value="0.0215930283892407" />
+      <inertia
+        ixx="4.36749924006053E-06"
+        ixy="-1.48655886188051E-13"
+        ixz="-1.80318003777662E-13"
+        iyy="4.87786085449838E-06"
+        iyz="8.34458849125056E-14"
+        izz="4.1413060831826E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/end_effector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_light9/meshes/end_effector.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="crossbar2" />
+    <child
+      link="end_effector" />
+    <axis
+      xyz="1 0 0" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+</robot>

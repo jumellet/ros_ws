@@ -1,0 +1,27 @@
+<launch>
+
+  <!-- gazebo configs -->
+  <arg name="gui" default="true"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="true"/>
+  <arg name="paused" default="false"/>
+
+  <!-- Gazebo sim -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+    <arg name="paused" value="$(arg paused)"/>
+  </include>
+
+  <!-- My spawn -->
+  <param name="robot_description" command="cat $(find arm9)/urdf/arm9.urdf"/>
+  <rosparam file="$(find arm9)/config/arm9.yaml" command="load"/>
+  <node args="joint2 joint3 joint_state_controller " name="controller_spawner" output="screen" ns="arm9" pkg="controller_manager" respawn="false" type="spawner"/>
+  
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find arm9)/urdf/arm9.urdf -urdf -model arm9 -J joint3 -1.4" output="screen" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  
+
+</launch>

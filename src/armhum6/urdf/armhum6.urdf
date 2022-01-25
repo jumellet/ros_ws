@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="armhum6">
+
+<!--
+  <link name="world" /> 
+  <joint name="world_to_base_link" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.85" rpy="0 0 0"/>
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.93248195223816E-15 -8.85402862138562E-15 -0.185059211902818"
+        rpy="0 0 0" />
+      <mass
+        value="0.523412725104608" />
+      <inertia
+        ixx="0.0910156280985819"
+        ixy="-1.89735380184971E-16"
+        ixz="2.8165359896208E-17"
+        iyy="0.0910136332593244"
+        iyz="-4.53168684381061E-16"
+        izz="0.126397324140064" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.00784313725490196 0.23921568627451 0.823529411764706 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  -->
+
+  <link
+    name="top-link">
+    <inertial>
+      <origin
+        xyz="-4.67723785742002E-05 2.30554230845614E-08 0.0232375072219701"
+        rpy="0 0 0" />
+      <mass
+        value="0.00734463434724172" />
+      <inertia
+        ixx="6.66675171615578E-07"
+        ixy="2.37767693918994E-12"
+        ixz="-1.96968750445307E-10"
+        iyy="1.59431490534566E-06"
+        iyz="2.24673253636865E-12"
+        izz="1.2315954297594E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/top-link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.690196078431373 0.509803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/top-link.STL" />
+      </geometry>
+    </collision>
+  </link>
+<!--
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.051"
+      rpy="0 0 0.0209138165636579" />
+    <parent
+      link="base_link" />
+    <child
+      link="top-link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="6"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      friction="0.008" />
+  </joint>
+-->
+  <link
+    name="crossbar1">
+    <inertial>
+      <origin
+        xyz="1.00137396916167E-08 8.56077458921689E-10 6.40373767901714E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.00235911157708547" />
+      <inertia
+        ixx="2.29651648984905E-07"
+        ixy="8.58509279831178E-15"
+        ixz="4.33752665624393E-15"
+        iyy="4.41657972153878E-07"
+        iyz="8.84534542379393E-16"
+        izz="2.29651496122624E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/crossbar1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.286274509803922 0.662745098039216 0.329411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/crossbar1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.008"
+      rpy="1.5708 0 0" />
+    <parent
+      link="top-link" />
+    <child
+      link="crossbar1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="2"
+      velocity="2" />
+    <dynamics
+      friction="0.008" />
+  </joint>
+  <link
+    name="middle-link">
+    <inertial>
+      <origin
+        xyz="-3.62208064747099E-05 2.10896379700121E-08 -0.182316330263296"
+        rpy="0 0 0" />
+      <mass
+        value="0.0188050348545265" />
+      <inertia
+        ixx="0.000409979396090837"
+        ixy="8.57838434093389E-11"
+        ixz="-1.17762824236184E-09"
+        iyy="0.000411743915509089"
+        iyz="4.54699290001078E-11"
+        izz="2.29220461469508E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/middle-link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.937254901960784 0.137254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/middle-link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 1.5708 0" />
+    <parent
+      link="crossbar1" />
+    <child
+      link="middle-link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="2"
+      velocity="2" />
+    <dynamics
+      friction="0.008" />
+  </joint>
+  <link
+    name="crossbar2">
+    <inertial>
+      <origin
+        xyz="1.00137396916167E-08 -8.56077486677265E-10 -6.40373733207245E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.00235911157708547" />
+      <inertia
+        ixx="4.09739927419315E-07"
+        ixy="-5.54410068536451E-14"
+        ixz="8.96638089354031E-23"
+        iyy="7.42166622150847E-07"
+        iyz="8.26818556470318E-13"
+        izz="4.09739648427647E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/crossbar2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.286274509803922 0.662745098039216 0.329411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/crossbar2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.364"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="middle-link" />
+    <child
+      link="crossbar2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      friction="0.0008" />
+  </joint>
+  <link
+    name="end-effector">
+    <inertial>
+      <origin
+        xyz="1.5247481298386E-08 -9.62803350934571E-10 -0.0310990514764574"
+        rpy="0 0 0" />
+      <mass
+        value="0.04" />
+      <inertia
+        ixx="8.29194371078775E-06"
+        ixy="2.44485731659268E-12"
+        ixz="-10.74857545356207E-12"
+        iyy="10.15110528669366E-06"
+        iyz="6.95136243790226E-13"
+        izz="4.54716494152254E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/end-effector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.694117647058824 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armhum6/meshes/end-effector.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="crossbar2" />
+    <child
+      link="end-effector" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      friction="0.0008" />
+  </joint>
+
+  <!-- Transmission for control-->
+  <transmission name="joint2_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint2_actr">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="joint3_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="joint3_actr">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/armhum6</robotNamespace>
+    </plugin>
+  </gazebo>
+
+
+</robot>

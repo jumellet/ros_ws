@@ -1,0 +1,14 @@
+arm9:
+# Publish all joint states -----------------------------------
+  joint_state_controller:
+   type: joint_state_controller/JointStateController
+   publish_rate: 50
+
+  joint2:
+    type: effort_controllers/JointPositionController
+    joint: joint2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint3:
+    type: effort_controllers/JointPositionController
+    joint: joint3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
