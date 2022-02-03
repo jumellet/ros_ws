@@ -1,16 +1,70 @@
-FloatLayout:
+MDFloatLayout:
 
-    MDSlider:
-        id: myslider
+    MDBoxLayout:
+        orientation: "vertical"
+        size_hint_y: None
+        pos_hint: {'top': 1}
+        MDLabel:
+            bold: True
+            text: "JOYSTICK COMMAND"
+        MDLabel:
+            text: "x_left:  %s" % int(slider_x_left.value)
+        MDLabel:
+            text: "y_left:  %s" % int(slider_y_left.value)
+        MDLabel:
+            text: "x_right: %s" % int(slider_x_right.value)
+        MDLabel:
+            text: "y_right: %s" % int(slider_y_right.value)
+
+
+    MDProgressBar:
+        pos_hint: {'center_x':.35, 'y':0}
+        id: slider_x_left
         min: 0
         max: 255
         value: 127
         hint: False
-        on_touch_up: app.slider_function(self.value)
+        orientation: "horizontal"
+        size: 150, 150
+        size_hint: None, None
+        #on_touch_up: app.slider_function(self.value)
+        color: app.theme_cls.opposite_bg_normal
+
+    MDProgressBar:
+        pos_hint: {'center_x':.35, 'y':0}
+        id: slider_y_left
+        min: 0
+        max: 255
+        value: 127
+        hint: False
+        orientation: "vertical"
+        size: 150, 150
+        size_hint: None, None
+        color: app.theme_cls.opposite_bg_normal
+
+    MDProgressBar:
+        pos_hint: {'center_x':.65, 'y':0}
+        id: slider_x_right
+        min: 0
+        max: 255
+        value: 127
+        hint: False
+        orientation: "horizontal"
+        size: 150, 150
+        size_hint: None, None
+        color: app.theme_cls.opposite_bg_normal
+
+    MDProgressBar:
+        pos_hint: {'center_x':.65, 'y':0}
+        id: slider_y_right
+        min: 0
+        max: 255
+        value: 127
+        hint: False
+        orientation: "vertical"
+        size: 150, 150
+        size_hint: None, None
+        color: app.theme_cls.opposite_bg_normal
 
 
-    MDLabel:
-        text: "speed: %s" % int(myslider.value)
-        halign: "center"
-        size_hint: .5, .5
-        pos_hint: {"center_x": .5, "center_y": .7}
+    
